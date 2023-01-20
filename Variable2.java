@@ -1,3 +1,5 @@
+import java.util.Scanner;  // Scanner 클래스 추가
+
 // 상수
 class Variable2_1 {
     public static void main(String[] args) {
@@ -64,5 +66,44 @@ class Variable2_3 {
         double d2 = .10; // 0.10
         double d3 = 1e3; // 1000.0 , e3 = 10의 3제곱
         double d4 = -1e3; // -1000.0
+    }
+}
+
+// 입출력
+// (1) printf()를 이용한 출력
+class Variable2_4 {
+    public static void main(String[] args) {
+        String url = "www.codechobo.com";
+        float f1 = .10f;
+        float f2 = 1e1f; // e=10 -> f2 = 10.0
+        float f3 = 3.14e3f; // f3 = 3140
+        double d = 1.23456789;
+
+        System.out.printf("f1 = %f, %e, %g%n", f1, f1, f1); // %e=지수표현, %g=간략표현
+        System.out.printf("f2 = %f, %e, %g%n", f2, f2, f2);
+        System.out.printf("f3 = %f, %e, %g%n", f3, f3, f3);
+
+        System.out.printf("d = %f%n", d);
+        System.out.printf("d = %14.10f%n", d); // 전체 14자리, 소수점아래 10자리 -> 공백 0으로 채움
+
+        System.out.printf("[12345678901234567890]%n");
+        System.out.printf("[%s]%n", url);
+        System.out.printf("[%20s]%n", url); // 20글자 출력공간, 우측정렬_좌측공백
+        System.out.printf("[%-20s]%n", url); // 좌측정렬_우측공백
+        System.out.printf("[%.8s]%n", url); // 왼족부터 8글자 출력
+    }
+}
+
+// (2) 입력받기
+class Variable2_5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // 객체 생성
+
+        System.out.print("두 자리 정수를 입력하세요 : ");
+        String input = scanner.nextLine(); // nextLine() 대신 nextInt() 가능
+        int num = Integer.parseInt(input); // 입력받은 문자열 -> 숫자형으로 변환
+
+        System.out.println("입력내용 : " + input);
+        System.out.printf("num = %d%n", num);
     }
 }
